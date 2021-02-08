@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>miniPCIe LEA-M8T GNSS Card</title>
+</head>
+
+<body>
+    <div class="container mx-auto px-3">
+        <div class="w-full my-3 text-sm text-right bg-gray-200 px-3 py-1">
+            Last update: 08. 02. 2021 01:21
+                (git revision
+                    <a href="https://github.com/neg2led/mpcie-lea-m8t.git/tree/fca33088bf0cb157435a1700abd2eb2454fe22e1
+">
+                    fca3308
+                    </a>)
+        </div>
+
+        <h1>mPCIe-LEA-M8T</h1>
+
+<p><a href="https://travis-ci.com/neg2led/mpcie-lea-m8t"><img src="https://travis-ci.com/neg2led/mpcie-lea-m8t.svg?branch=master" alt="Build Status" /></a></p>
+
+<p>This is a little miniPCIe card I designed to hold a <a href="https://www.u-blox.com/en/product/neolea-m8t-series">u-blox LEA-M8T</a> GNSS module, with an IO header and an optional backup supercap.
+The IO header has both timepulse outputs, as well as UART TX/RX. Module USB is connected to miniPCIe USB. I have not included a way to switch from UART to SPI.</p>
+
+<p><img src="mPCIe-GNSS/mPCIe-GNSS.png" alt="KiCad raytraced board render" /></p>
+
+<p>I had this made by <a href="https://jlcpcb.com">JLCPCB</a> using their 1mm thick PCBs, and elected to get them to assemble most of it - while all of the parts except the supercapacitor, connectors, and GNSS module are in their extended part library, it didn't make sense to spend $6 on extended part fees for two assembled boards, so I skipped the transistors and diode.</p>
+
+<h2>Repository Structure</h2>
+
+<ul>
+<li><code>mPCIe-GNSS</code> contains the main schematics and board drawing</li>
+<li><code>mPCIe-GNSS/mPCIe-GNSS.pretty</code> contains the board-specific footprints</li>
+<li><code>mPCIe-GNSS/mPCIe-GNSS-archive.lib</code> contains the board-specific symbols</li>
+</ul>
+
+<h2>Building</h2>
+
+<p>Simply call <code>make</code> in the top-top level directory. The <code>build</code> directory will
+them contain:</p>
+
+<ul>
+<li>the main mPCIe board</li>
+<li>A panelized version of said board</li>
+<li>zipped gerbers for the boards you can directly use for manufacturing</li>
+<li>zipped gerbers and SMT assembly BOM/position files for JLCPCB's SMT assembly service for the single-board version.</li>
+</ul>
+
+<p>Makefile uses <a href="https://github.com/yaqwsx">Jan Mrázek</a>'s <a href="https://github.com/yaqwsx/KiKit">KiKit</a>, which I cannot recommend enough, and therefore has to be available on your system.</p>
+
+<p>Jan's <a href="https://yaqwsx.github.io/jlcparts/">jlcparts</a> app was also extremely useful in narrowing down part choices based on what JLCPCB have available.</p>
+
+<hr />
+
+<h3><strong>IMPORTANT NOTE:</strong> If you give JLCPCB these files as-is, <em>please</em> verify the orientation of every part before submitting.</h3>
+
+<p>Furthermore, while I have received a run of these from JLCPCB, but I appear to have killed my LEA-M8T while 'recovering' it from a chunk of PCB, so <strong>I can't verify that they <em>actually work</em></strong>. Will update this if that changes.</p>
+
+
+        <h1>Available files</h1>
+
+            <div class="w-full flex flex-wrap bg-gray-200 py-3 px-3 my-2 rounded">
+                <div class="w-full md:w-1/3">
+                    <h3>Front</h3>
+                    <img src="boards/mPCIe-GNSS-front.png" class="boardPreview">
+                </div>
+                <div class="w-full md:w-1/3">
+                    <h3>Back</h3>
+                    <img src="boards/mPCIe-GNSS-back.png" class="boardPreview">
+                </div>
+                <div class="w-full md:w-1/3 px-4">
+                    <h3>mini-PCIe LEA-M8T GNSS Board</h3>
+                    <p> </p>
+                    <p>
+                        <ul>
+                            <li><a href="boards/mPCIe-GNSS.kicad_pcb">Download source board</a></li>
+                            <li><a href="boards/mPCIe-GNSS-gerbers.zip">Download gerbers</a></li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <div class="w-full flex flex-wrap bg-gray-200 py-3 px-3 my-2 rounded">
+                <div class="w-full md:w-1/3">
+                    <h3>Front</h3>
+                    <img src="boards/mPCIe-GNSS-panel-front.png" class="boardPreview">
+                </div>
+                <div class="w-full md:w-1/3">
+                    <h3>Back</h3>
+                    <img src="boards/mPCIe-GNSS-panel-back.png" class="boardPreview">
+                </div>
+                <div class="w-full md:w-1/3 px-4">
+                    <h3>mini-PCIe LEA-M8T GNSS Board Panelized</h3>
+                    <p> </p>
+                    <p>
+                        <ul>
+                            <li><a href="boards/mPCIe-GNSS-panel.kicad_pcb">Download source board</a></li>
+                            <li><a href="boards/mPCIe-GNSS-panel-gerbers.zip">Download gerbers</a></li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+        <div class="w-full mt-16 mb-1 p-2 bg-gray-200 text-center txt-xs rounded">
+            Generated by <a href="https://github.com/yaqwsx/KiKit">KiKit</a>
+        </div>
+    </div>
+</body>
+
+</html>
