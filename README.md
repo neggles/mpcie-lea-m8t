@@ -1,4 +1,4 @@
-# mPCIe-LEA-4L
+# mPCIe-LEA-M8T
 
 This is a little miniPCIe card I designed to hold a [u-blox LEA-M8T](https://www.u-blox.com/en/product/neolea-m8t-series) GNSS module, with an IO header and an optional backup supercap.
 The IO header has both timepulse outputs, as well as UART TX/RX. Module USB is connected to miniPCIe USB. I have not included a way to switch from UART to SPI.
