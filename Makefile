@@ -20,7 +20,9 @@ build/mPCIe-GNSS.sch: mPCIe-GNSS/mPCIe-GNSS.sch build
 
 build/mPCIe-GNSS-panel.kicad_pcb: build/mPCIe-GNSS.kicad_pcb
 	kikit panelize grid --space 3 --gridsize 1 2 \
-		--tabwidth 5 --tabheight 5 --mousebites 0.5 0.75 0.25 --radius $(RADIUS) $< $@
+		--tabwidth 5 --tabheight 5 --htabs 2 --vtabs 2 \
+		--panelsize 90 90 --framecutV --fiducials 10 2.5 1 2 --tooling 5 2.5 1.5 \
+		--mousebites 0.5 0.75 0.25 --radius $(RADIUS) $< $@
 
 build/mPCIe-GNSS-panel.sch: mPCIe-GNSS/mPCIe-GNSS.sch
 		cp $< $@
@@ -51,6 +53,7 @@ build/web/index.html: build/web $(BOARDSFILES)
 		--name "miniPCIe LEA-M8T GNSS Card" \
 		-b "mini-PCIe LEA-M8T GNSS Board" " " build/mPCIe-GNSS.kicad_pcb  \
 		-b "mini-PCIe LEA-M8T GNSS Board Panelized" " " build/mPCIe-GNSS-panel.kicad_pcb  \
+		-r "mPCIe-GNSS/mPCIe-GNSS.png" \
 		--repository "$(GITREPO)"\
 		build/web
 
