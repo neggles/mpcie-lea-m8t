@@ -1,4 +1,3 @@
-
 # Created by https://www.toptal.com/developers/gitignore/api/kicad,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=kicad,visualstudiocode
 
@@ -30,15 +29,6 @@ fp-info-cache
 *.xml
 *.csv
 
-# Exported 3D models
-*.step
-
-# Build outputs
-build
-
-# MS Excel lock files
-.~lock.*
-
 ### KiCad Patch ###
 rescue-backup/
 
@@ -60,3 +50,12 @@ out/
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/kicad,visualstudiocode
+
+# Build outputs
+build
+
+# MS Excel lock files
+.~lock.*
+
+# secrets
+.secrets
