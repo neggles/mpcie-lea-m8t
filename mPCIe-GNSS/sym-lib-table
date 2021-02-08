@@ -1,0 +1,2 @@
+(sym_lib_table    (lib (name archive)(type Legacy)(uri "${KIPRJMOD}/mPCIe-GNSS-archive.lib")(options "")(descr ""))
+)

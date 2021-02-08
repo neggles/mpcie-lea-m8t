@@ -30,6 +30,15 @@ fp-info-cache
 *.xml
 *.csv
 
+# Exported 3D models
+*.step
+
+# Build outputs
+build
+
+# MS Excel lock files
+.~lock.*
+
 ### KiCad Patch ###
 rescue-backup/
 
