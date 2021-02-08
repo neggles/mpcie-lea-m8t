@@ -20,9 +20,9 @@ build/mPCIe-GNSS.sch: mPCIe-GNSS/mPCIe-GNSS.sch build
 
 build/mPCIe-GNSS-panel.kicad_pcb: build/mPCIe-GNSS.kicad_pcb
 	kikit panelize grid --space 3 --gridsize 1 2 \
-		--tabwidth 5 --tabheight 5 --htabs 2 --vtabs 2 \
-		--panelsize 90 90 --framecutV --fiducials 10 2.5 1 2 --tooling 5 2.5 1.5 \
-		--mousebites 0.5 0.75 0.25 --radius $(RADIUS) $< $@
+		--tabwidth 3 --tabheight 3 --htabs 2 --vtabs 1 \
+		--panelsize 77.5 67.5 --framecutV --fiducials 10 2.5 1 2 --tooling 5 2.5 1.5 \
+		--vcuts --radius $(RADIUS) $< $@
 
 build/mPCIe-GNSS-panel.sch: mPCIe-GNSS/mPCIe-GNSS.sch
 		cp $< $@
